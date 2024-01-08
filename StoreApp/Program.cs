@@ -57,4 +57,5 @@ app.ConfigureDefaultAdminUser();
 app.Run();
 
 // to pass command prompt: chdir c:\users\samsung\mvc\store\storeapp
-// Admin Admin+123456;    Filiz: pwd : filiz+12345;   Ali: pwd: ali+12345
+// Admin Admin+123456;    Filiz: pwd : filiz+12345;   Ali: pwd: ali+123458.
+// 8.1.2024'te orijinal halind branch açarak çalýþýlmaya baþlandý.
