@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Entities.Dtos
 {
     public record ProductDto
-    {  // record lar  immutable'dir, değişmezler
+    {
         public int ProductId { get; init; }
 
         [Required(ErrorMessage = "Product Name is required")]

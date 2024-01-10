@@ -27,11 +27,10 @@ namespace Repositories
         {
             base.OnModelCreating(modelBuilder);
 
-            /*  modelBuilder.ApplyConfiguration(new ProductConfig());
-                modelBuilder.ApplyConfiguration(new CategoryConfig()); */
+            /* modelBuilder.ApplyConfiguration(new ProductConfig());
+            modelBuilder.ApplyConfiguration(new CategoryConfig()); */
             /* Bu yol olabilir ya da bir assembly uygulanabilir */
 
-            // Çalışan assembly'deki tip config.leri otomatik olarak almak için kullanılır. Migration ifadeleri bundan sonra oluşur
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             /*  modelBuilder.Entity<Product>().HasData(

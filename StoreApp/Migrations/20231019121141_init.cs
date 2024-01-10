@@ -241,9 +241,9 @@ namespace StoreApp.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "013ab200-ec5e-4f5a-bcda-8444124ed827", "6ef2011a-7d83-4387-83c5-569cfd153209", "User", "USER" },
-                    { "1df49b66-ca1f-461a-bac0-d20337adc0f1", "ad9b2e2b-ed32-49b2-bf84-f2c13dee2810", "Admin", "ADMIN" },
-                    { "fca0af17-fd59-4c15-8a81-ebb278695683", "75b38e58-4116-4106-86a7-8bf92cfea87e", "Editor", "EDITOR" }
+                    { "11dabc06-d4ea-4ebe-84b0-d5702e3a4b56", "0f056408-784c-4fa6-a089-95bb5b8d517d", "Admin", "ADMIN" },
+                    { "6bddb069-59fc-46dd-a01e-e81c3b7c4a02", "30a6f3e8-56f4-47b5-8a52-3e5bf249fc98", "Editor", "EDITOR" },
+                    { "709ba81b-4a3a-439d-883a-6e3f1eda958e", "161fd53d-e224-4616-b918-71e139c61cd1", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
