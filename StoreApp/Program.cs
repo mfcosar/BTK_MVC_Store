@@ -24,7 +24,7 @@ builder.Services.ConfigureApplicationCookie();
 //builder.Services.AddSingleton<Cart>(); //herkes ayný Cart'ý kullanacak
 //builder.Services.AddScoped<Cart>(c => SessionCart.GetCart(c));     //her kullanýcý için ayrý cart
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(Program)); // AutoMapper servis kaydý
 
 var app = builder.Build();
 
@@ -57,5 +57,5 @@ app.ConfigureDefaultAdminUser();
 app.Run();
 
 // to pass command prompt: chdir c:\users\samsung\mvc\store\storeapp
-// Admin Admin+123456;    Filiz: pwd : filiz+12345;   Ali: pwd: ali+123458.
+// Admin Admin+123456;    
 // 8.1.2024'te orijinal halind branch açarak çalýþýlmaya baþlandý.
