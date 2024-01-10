@@ -12,7 +12,7 @@ using Repositories;
 namespace StoreApp.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231019121141_init")]
+    [Migration("20240110223046_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -283,22 +283,22 @@ namespace StoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "709ba81b-4a3a-439d-883a-6e3f1eda958e",
-                            ConcurrencyStamp = "161fd53d-e224-4616-b918-71e139c61cd1",
+                            Id = "43f3eadd-2d01-4ec5-bfa7-4acd32663e36",
+                            ConcurrencyStamp = "b954eb63-bbf6-40d5-a211-199b1c11caae",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "6bddb069-59fc-46dd-a01e-e81c3b7c4a02",
-                            ConcurrencyStamp = "30a6f3e8-56f4-47b5-8a52-3e5bf249fc98",
+                            Id = "fc2bc8b3-ba05-411c-9ca2-f6abf3d6f501",
+                            ConcurrencyStamp = "3a023009-dbbc-4f01-9b1d-8b4b44e161c5",
                             Name = "Editor",
                             NormalizedName = "EDITOR"
                         },
                         new
                         {
-                            Id = "11dabc06-d4ea-4ebe-84b0-d5702e3a4b56",
-                            ConcurrencyStamp = "0f056408-784c-4fa6-a089-95bb5b8d517d",
+                            Id = "77f29ff6-411b-4aaf-b69f-c8b8b2cbba9c",
+                            ConcurrencyStamp = "223e31f3-fd3b-491f-acf3-d1d7654953a5",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
