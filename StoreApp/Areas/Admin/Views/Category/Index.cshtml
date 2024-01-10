@@ -1,2 +1,46 @@
-﻿
-    <h3>Category Index</h3>
+﻿@model IEnumerable<Category>
+
+
+<div class="text-center">
+    <div class="display-6">Categories</div>
+
+
+    <div class="row">
+
+        <div class="col-md-9">
+            <table class="table table-striped table-hover table-bordered" >
+                <thead>
+                    <tr>
+                        <th>Category Id</th>
+                        <th>Category Name</th>
+                        <th>Products</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Category cat in Model)
+                    {
+                        <tr>
+                            <td>@cat.CategoryId</td>
+                            <td>@cat.CategoryName</td>
+                            <td>@foreach (Product prd in @ViewBag.Products)
+                                {
+                                    if (@cat.CategoryId == @prd.CategoryId)
+                                    {
+                                        @prd.ProductName <br />
+                                    }
+                                }
+
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+</div>
+

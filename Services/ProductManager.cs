@@ -34,7 +34,7 @@ namespace Services
                 Price = productDto.Price,
                 CategoryId= productDto.CategoryId
             };*/
-
+            // mapping işlemi Product Manager servisinde çözüldüğü için daha alt katmanlarda değişikliğe gerek kalmıyor
             Product product = _mapper.Map<Product>(productDto);
 
             _manager.Product.CreateOneProduct(product);
