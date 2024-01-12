@@ -11,5 +11,7 @@ namespace Services.Contracts
     {
         IEnumerable<Category> GetAllCategories(bool trackChanges);
 
+        void CreateCategory(Category category);
+
     }
 }

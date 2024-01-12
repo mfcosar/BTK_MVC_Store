@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
+    public sealed class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
     {
         public CategoryRepository(RepositoryContext context) : base(context)
         {
         }
+
+        public void CreateOneCategory(Category category) => Create(category);
     }
 }

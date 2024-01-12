@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Services.Contracts;
 
 namespace StoreApp.Areas.Admin.Controllers
@@ -20,6 +22,24 @@ namespace StoreApp.Areas.Admin.Controllers
             ViewBag.Products = _manager.ProductService.GetAllProducts(false);
 
             return View(categories);            
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public IActionResult Create([FromForm] Category category)
+        {
+            if (ModelState.IsValid) { 
+                _manager.CategoryService.CreateCategory(category);
+                return RedirectToAction("Index");
+            }
+
+            return View();
         }
     }
 }

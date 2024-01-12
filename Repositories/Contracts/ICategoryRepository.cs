@@ -9,7 +9,9 @@ namespace Repositories.Contracts
 {
     public interface ICategoryRepository: IRepositoryBase<Category>
     {
-    /*    IQueryable<Product> GetAllProducts(bool trackChanges);
-        public Product? GetOneProduct(int id, bool trackChanges);*/
+        /*    IQueryable<Product> GetAllProducts(bool trackChanges);
+            public Product? GetOneProduct(int id, bool trackChanges);*/
+
+        void CreateOneCategory(Category category);
     }
 }
