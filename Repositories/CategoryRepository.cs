@@ -15,5 +15,13 @@ namespace Repositories
         }
 
         public void CreateOneCategory(Category category) => Create(category);
+
+        public Category? GetOneCategory(int id, bool trackChanges)
+        {
+            return FindByCondition(p => p.CategoryId.Equals(id), trackChanges);
+
+        }
+
+        public void UpdateOneCategory(Category entity) => Update(entity);
     }
 }

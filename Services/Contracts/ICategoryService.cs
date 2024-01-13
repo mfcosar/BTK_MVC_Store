@@ -13,5 +13,7 @@ namespace Services.Contracts
 
         void CreateCategory(Category category);
 
+        Category? GetOneCategory(int id, bool trackChanges);
+        void UpdateOneCategory(Category category);
     }
 }

@@ -38,9 +38,20 @@
                                 }
 
                             </td>
-                            <td>.</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-warning" asp-action="Update" asp-route-id="@cat.CategoryId">
+                                        <i class="fa fa-edit"></i>
+                                        Edit</a>
+                                    <!-- <a class="btn btn-info" target="_blank" asp-area="" asp-controller="Category" asp-action="Get" asp-route-id="@cat.CategoryId">
+                                        <i class="fa fa-search"></i>
+                                        Web</a> -->
+                                        <!-- Bu serach web kısmını controller da handle edemediğim için henüz açamadım-->
+                                </div>
+
+                            </td>
                         </tr>
-                    }
+                   }
 
 
                 </tbody>

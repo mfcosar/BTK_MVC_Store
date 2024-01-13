@@ -29,5 +29,26 @@ namespace Services
             // throw new NotImplementedException();
             return _manager.Category.FindAll(trackChanges);
         }
+
+        public Category? GetOneCategory(int id, bool trackChanges)
+        {
+            var category = _manager.Category.GetOneCategory(id, trackChanges);
+
+            if (category is null)
+            {
+                throw new Exception("Category not found!");
+            }
+            else return category;
+        }
+
+        public void UpdateOneCategory(Category category)
+        {
+            var entity = _manager.Category.GetOneCategory(category.CategoryId, true);
+            //değişiklikleri izleyip kaydedeceğiz
+            entity.CategoryName = category.CategoryName;  
+            // Repo'ya kadar inip tanımları yapmak gerekiyor. Sadece repobase'de update var.
+            // .net core zaten izlediği için objeyi. Serviste çözüldü
+            _manager.Save();
+        }
     }
 }
