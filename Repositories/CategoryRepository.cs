@@ -16,6 +16,8 @@ namespace Repositories
 
         public void CreateOneCategory(Category category) => Create(category);
 
+        public void DeleteOneCategory(Category category) => Remove(category);
+
         public Category? GetOneCategory(int id, bool trackChanges)
         {
             return FindByCondition(p => p.CategoryId.Equals(id), trackChanges);

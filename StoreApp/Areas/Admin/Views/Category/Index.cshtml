@@ -43,10 +43,14 @@
                                     <a class="btn btn-warning" asp-action="Update" asp-route-id="@cat.CategoryId">
                                         <i class="fa fa-edit"></i>
                                         Edit</a>
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@cat.CategoryId">
+                                        <i class="fa fa-trash"></i>
+                                        Delete
+                                    </a>
                                     <!-- <a class="btn btn-info" target="_blank" asp-area="" asp-controller="Category" asp-action="Get" asp-route-id="@cat.CategoryId">
                                         <i class="fa fa-search"></i>
                                         Web</a> -->
-                                        <!-- Bu serach web kısmını controller da handle edemediğim için henüz açamadım-->
+                                        <!-- Get.cshtml yazılmadığı için burayı kapattım. Aslında category özetine gerek yok-->
                                 </div>
 
                             </td>

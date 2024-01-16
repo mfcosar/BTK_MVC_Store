@@ -24,6 +24,17 @@ namespace Services
             _manager.Save();
         }
 
+        public void DeleteOneCategory(int id)
+        {
+            Category category = GetOneCategory(id, false); // ?? new Category();
+
+            if (category is not null) {
+                _manager.Category.DeleteOneCategory(category);
+                _manager.Save(); // bütün işlem yapıldıktan sonra kalıcı olarak db'e yansıtılır
+            }
+            
+        }
+
         public IEnumerable<Category> GetAllCategories(bool trackChanges)
         {
             // throw new NotImplementedException();

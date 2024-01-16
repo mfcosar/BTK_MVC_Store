@@ -15,5 +15,6 @@ namespace Services.Contracts
 
         Category? GetOneCategory(int id, bool trackChanges);
         void UpdateOneCategory(Category category);
+        void DeleteOneCategory(int id);
     }
 }

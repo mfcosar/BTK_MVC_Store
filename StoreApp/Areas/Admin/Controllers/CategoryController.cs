@@ -26,21 +26,12 @@ namespace StoreApp.Areas.Admin.Controllers
             return View(categories);            
         }
 
-        /* public IActionResult Index([FromQuery] int catId)
-        {  // implement here incase to handle web overwiew of categories
-
-            if (catId == 0) { 
-                var categories = _manager.CategoryService.GetAllCategories(false);
-                ViewBag.Products = _manager.ProductService.GetAllProducts(false);
-                return View(categories);
-
-            }
-            else {
-                var categories = _manager.CategoryService.GetOneCategory(catId, false);
-                return View(categories);
-            }
-        } */
-
+        [HttpGet]
+        public IActionResult Delete([FromRoute(Name ="id")]int id)
+        {
+            _manager.CategoryService.DeleteOneCategory(id);
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Create()
         {

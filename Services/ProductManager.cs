@@ -43,6 +43,7 @@ namespace Services
 
         public void DeleteOneProduct(int id)
         {
+
             Product product = GetOneProduct(id, false);  //?? new Product();
 
             if (product is not null)
