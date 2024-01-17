@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace Services.Contracts
     {
         IEnumerable<Category> GetAllCategories(bool trackChanges);
 
-        void CreateCategory(Category category);
+        void CreateCategory(CategoryDtoForInsertion categoryDto);
 
         Category? GetOneCategory(int id, bool trackChanges);
-        void UpdateOneCategory(Category category);
+
+        CategoryDtoForUpdate GetOneCategoryForUpdate(int id, bool trackChanges);
+        void UpdateOneCategory(CategoryDtoForUpdate categoryDto);
         void DeleteOneCategory(int id);
     }
 }

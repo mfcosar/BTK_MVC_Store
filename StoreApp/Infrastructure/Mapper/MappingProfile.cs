@@ -13,6 +13,9 @@ namespace StoreApp.Infrastructure.Mapper
             CreateMap<ProductDtoForUpdate, Product>().ReverseMap(); //Hem Dto'dan product'a, hem product'tan Dto'a geçiş gerekli
             CreateMap<UserDtoForCreation, IdentityUser>();
             CreateMap<UserDtoForUpdate, IdentityUser>().ReverseMap();
+            CreateMap<CategoryDtoForInsertion, Category>();
+            CreateMap<CategoryDtoForUpdate, Category>().ReverseMap();
+
 
 
         }

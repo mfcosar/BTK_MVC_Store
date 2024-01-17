@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using Entities.Dtos;
 using Entities.RequestParameters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
@@ -40,16 +41,16 @@ namespace StoreApp.Areas.Admin.Controllers
 
         public IActionResult Update([FromRoute(Name ="id")]int id)
         {
-            var model = _manager.CategoryService.GetOneCategory(id, false);
+            var model = _manager.CategoryService.GetOneCategoryForUpdate(id, false);
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update( Category category)
+        public IActionResult Update( [FromForm] CategoryDtoForUpdate categoryDto)
         {
             if (ModelState.IsValid) { 
-                _manager.CategoryService.UpdateOneCategory(category);
+                _manager.CategoryService.UpdateOneCategory(categoryDto);
                 return RedirectToAction("Index");
             }
             return View();
@@ -58,10 +59,10 @@ namespace StoreApp.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public IActionResult Create([FromForm] Category category)
+        public IActionResult Create([FromForm] CategoryDtoForInsertion categoryDto)
         {
             if (ModelState.IsValid) { 
-                _manager.CategoryService.CreateCategory(category);
+                _manager.CategoryService.CreateCategory(categoryDto);
                 return RedirectToAction("Index");
             }
 
