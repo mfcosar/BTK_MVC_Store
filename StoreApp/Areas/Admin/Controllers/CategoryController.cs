@@ -68,5 +68,6 @@ namespace StoreApp.Areas.Admin.Controllers
 
             return View();
         }
+        // featctegory branch is merged with master, categorucontroller is working without problem
     }
 }
