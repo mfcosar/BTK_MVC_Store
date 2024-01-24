@@ -33,6 +33,7 @@ app.UseSession();
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
 app.UseAuthentication(); // 1  Burasý Routing ve Endpoint'ler arasýna yazýlmalý
 app.UseAuthorization();  // 2 --   sýra önemli
 
@@ -53,7 +54,7 @@ app.UseEndpoints(endpoints =>
 
 app.ConfigureAndCheckMigration();
 app.ConfigureLocalization();
-app.ConfigureDefaultAdminUser();
+app.ConfigureDefaultAdminUser(); // migrations, db silinse bile app baþlarken default admin user tanýmlanýyor
 app.Run();
 
 // to pass command prompt: chdir c:\users\samsung\mvc\store\storeapp

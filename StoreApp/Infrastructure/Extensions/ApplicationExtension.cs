@@ -38,14 +38,14 @@ namespace StoreApp.Infrastructure.Extensions
                 .CreateScope().ServiceProvider
                 .GetRequiredService<UserManager<IdentityUser>>();
 
-            //RoleManager
+            //RoleManager: Admin'e bütün rolleri vermek istediğimiz için role manager tanımlandı
             RoleManager<IdentityRole> roleManager = app.ApplicationServices.CreateScope().ServiceProvider
                 .GetRequiredService<RoleManager<IdentityRole>>();
 
             IdentityUser user = await userManager.FindByNameAsync(adminUser);
 
             if (user is null)
-            {
+            { //kullanıcının varlığı kontrol ediir, yoksa oluşturulur
                 user = new IdentityUser()
                 {
                     Email = "btkakademi@btk.gov.tr",
@@ -57,6 +57,7 @@ namespace StoreApp.Infrastructure.Extensions
                 if (!result.Succeeded)
                     throw new Exception("Admin user cannot be formed");
 
+                // Kullanıcıya rolleri atanır
                 var roleResult = await userManager.AddToRolesAsync(user,
                    roleManager.Roles.Select(r => r.Name).ToList()
                     );

@@ -26,7 +26,7 @@ namespace StoreApp.Infrastructure.Extensions
         {
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
-                options.SignIn.RequireConfirmedAccount = false;
+                options.SignIn.RequireConfirmedAccount = false;  //kişi emailini onaylamadan oturum açamaz
                 options.User.RequireUniqueEmail = true;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;

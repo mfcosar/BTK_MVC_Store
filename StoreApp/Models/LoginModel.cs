@@ -3,7 +3,8 @@
 namespace StoreApp.Models
 {
     public class LoginModel
-    {
+    { // Servis katmanında bir işlem yapmadığımız için doğrudan StoreApp altında /Models/ altında tanımlıyoruz
+
         private string? _returnurl;
 
         [Required(ErrorMessage ="Name is required.")]
